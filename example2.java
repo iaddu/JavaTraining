@@ -1,3 +1,8 @@
+/*2. You have a file that stores data about players' scores they achieved in different matches against different teams at different points in time, 
+You have to identify the highest score of each player among all the matches
+If the entry is only a string that is the name of the player, and if the entry is pak_55_01_nov that implies the match against Pakistan scored 55 
+runs on November first.*/
+
 import java.io.*;
 import java.util.*;
 class Demo{
