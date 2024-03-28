@@ -9,7 +9,8 @@ class Demo{
 	public static int myScore(String str){
 		StringTokenizer st=new StringTokenizer(str,"_");
 		String sc="0";
-		for(int i=1;i<=2;i++){
+		int n=2;
+		for(int i=1;i<=n;i++){
 			if(st.hasMoreTokens())sc=st.nextToken();
 		}
 		int res=0;
