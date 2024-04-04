@@ -63,6 +63,23 @@ class CloudVendorServiceImpTest {
 		when(cloudVendorRepository.save(cloudVendor)).thenReturn(cloudVendor);
 		assertThat(cloudVendorService.updateCloudVendor(cloudVendor)).isEqualTo("success");
 	}
+
+	@Test
+	void testGetCloudVendor() {
+		mock(CloudVendorRepository.class);
+		mock(CloudVendor.class);
+		when(cloudVendorRepository.findById("1")).thenReturn(Optional.ofNullable(cloudVendor));
+		assertThat(cloudVendorService.getCloudVendor("1").getVendorName()).isEqualTo(cloudVendor.getVendorName());
+	}
+	
+	@Test
+	void testGetAllCloudVendors() {
+		mock(CloudVendorRepository.class);
+		mock(CloudVendor.class);
+		when(cloudVendorRepository.findAll()).thenReturn(new ArrayList<CloudVendor>(Collections.singleton(cloudVendor)));
+		assertThat(cloudVendorService.getAllCloudVendors().get(0).getVendorPhoneNumber()).isEqualTo(cloudVendor.getVendorPhoneNumber());
+	}
+	
 	
 
 }
